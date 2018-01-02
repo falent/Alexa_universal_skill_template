@@ -8,27 +8,27 @@ Unfortunately we won't waste time for set up environments if you come unprepared
 
 We will play around with Docker or heroku with MongoDB.  Please use Linux!! I'm not familiar with Windows and I hope you are also Linux fan (or you become one;) Of course you can do everything with Windows but my support will be limited.
 
-#1.
+# 1.
 
 [Please register at amazon developer portal ](http://developer.amazon.com/)
 It is free of charge. (if you are already registered amazon user you can use your credentials here). Without developer console you won't be able to write your skill 
 
-#2.
+# 2.
 
 You have 3 choices to start developing your skills. I'm going to describe all of them. Up to you what  you choose. I will do everything with docker. Please keep in mind that my solution is only for testing/learning how to write skills. At the end of this file you will find a solution how to publish your ready skill :) Yes, you will fully use what you prepared locally!
 
-#2.1 Virtual Machine
+# 2.1 Virtual Machine
 
 Download and start my VM with Virtualbox. When you start my VM  everything is going to be opened for you. No work from your side!
 
 Link to the VM: **SOON AVAILABLE!**
 
-#2.2 Docker
+# 2.2 Docker
 (if you don't want to use my VM or you would like to get know docker by doing something)
 
 [Please be sure you installed docker on your linux ](https://docs.docker.com/engine/installation/#cloud)
 
-#2.2.1 
+# 2.2.1 
 Firstly pull mongoDb image
 
 `$ sudo docker pull mongo`
