@@ -15,7 +15,7 @@ console.log(config)
 	}
 	if (config.enviroment=="heroku")
 		{
-		mongoose.connect('mongodb://heroku_6b9rh667:f7bcbsgbkcildjoo22rd3vpmmr@ds133465.mlab.com:33465/heroku_6b9rh667');
+		mongoose.connect('mongodb://heroku**********');
 		}
 	
 	
