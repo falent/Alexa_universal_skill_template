@@ -29,7 +29,7 @@ Link to the VM: **SOON AVAILABLE!**
 [Please be sure you installed docker on your linux ](https://docs.docker.com/engine/installation/#cloud)
 
 # 2.2.1 
-Firstly pull mongoDb image
+Firstly open terminal tab and pull mongoDb image
 
 `$ sudo docker pull mongo`
 
@@ -37,13 +37,15 @@ Run docker mongodb container:
 
 `$ sudo docker run --name database -d -p 27017:27017 mongo --noauth --bind_ip=0.0.0.0`
 
-Create a directory, for next steps best would be:
+Open a next terminal tab and create a directory, for next steps best would be:
 
-`$ mkdir /home/[yourUserName]/Desktop/Template/universal_skill`
+`$ cd`
+
+`$ mkdir ~/Desktop/Template/universal_skill`
 
 Go to the directory
 
-`$  cd /home/[yourUserName]/Desktop/Template/universal_skill`
+`$ cd ~/Desktop/Template/universal_skill`
 
 Clone my template from my github
 
@@ -67,7 +69,7 @@ In my case
 
 `$ 172.17.0.3`
 
-run the ngrok container:
+open a new terminal tab and run the ngrok container:
 
 `$ sudo docker run --rm -it wernight/ngrok ngrok http [your alexa container ip]:8000 `
 
@@ -80,6 +82,8 @@ Please copy the https adresse in my case it was:
 `$ https://b01408f.ngrok.io`
 
 **Congratulations you can start testing your skill**
+
+Please keep in mind all 3 terminal tabs need to be opened!
 
 TO BE CONTINUED 
 
