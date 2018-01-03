@@ -1,30 +1,11 @@
-Hi guys, 
-
-
-Firstly thank you very much that you decided to register for our event.
-
-I'm sending you what you need to participate in the event. Please prepare everything before you come. If you have any problems please don't hesitate to contact me. I will be 1 hour before our meeting at the office available so I could help you also from here.
-Unfortunately we won't waste time for set up environments if you come unprepared :P 
-
-We will play around with Docker or heroku with MongoDB.  Please use Linux!! I'm not familiar with Windows and I hope you are also Linux fan (or you become one;) Of course you can do everything with Windows but my support will be limited.
+It is a second way to set up enviroment to program Alexa skills locally during MeetUp 09.01.2018. If you dont like it [you can always use the first solution ](https://github.com/falent/Alexa_universal_skill_template_VM)               
 
 # 1.
 
 [Please register at amazon developer portal ](http://developer.amazon.com/)
 It is free of charge. (if you are already registered amazon user you can use your credentials here). Without developer console you won't be able to write your skill 
 
-# 2.
-
-You have 3 choices to start developing your skills. I'm going to describe all of them. Up to you what  you choose. I will do everything with docker. Please keep in mind that my solution is only for testing/learning how to write skills. At the end of this file you will find a solution how to publish your ready skill :) Yes, you will fully use what you prepared locally!
-
-# 2.1 Virtual Machine
-
-Download and start my VM with Virtualbox. When you start my VM  everything is going to be opened for you. No work from your side!
-
-Link to the VM: **SOON AVAILABLE!**
-
-# 2.2 Docker
-(if you don't want to use my VM or you would like to get know docker by doing something)
+# 2 Docker
 
 [Please be sure you installed docker on your linux ](https://docs.docker.com/engine/installation/#cloud)
 
@@ -49,7 +30,7 @@ Go to the directory
 
 Clone my template from my github
 
-`$ git clone https://github.com/falent/AlexaTemplateHerokuSkill.git `
+`$ git clone https://github.com/falent/Alexa_universal_skill_template.git `
 
 Install npm modules
 
@@ -83,9 +64,9 @@ Please copy the https adresse in my case it was:
 
 **Congratulations you can start testing your skill**
 
-Please keep in mind all 3 terminal tabs need to be opened!
+Please keep in mind all 3 terminal's tabs need to be opened all the time!
 
-TO BE CONTINUED 
+
 
 # quickly deploy to heroku
 
