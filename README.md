@@ -12,24 +12,13 @@ It is free of charge. (if you are already registered amazon user you can use you
 # 2.2.1 
 Firstly open terminal and create docker network
 
-
-
 `$ sudo docker network create myNetwork`
-
-open terminal tab and pull mongoDb image
-
-`$ sudo docker pull mongo`
 
 Run docker mongodb container:
 
-`$ sudo docker run --name mongo_database -d -p 27018:27018 mongo --noauth --network myNetwork`
-
-open a next terminal tab and pull dynamoDB image
-
-`$ docker pull dwmkerr/dynamodb`
+`$ sudo docker run --name mongo_database -d --network myNetwork -p 27017:27017 mongo --noauth `
 
 Run docker dynamoDB container:
-
 
 `$ sudo docker run -v "$PWD":/dynamodb_local_db --network myNetwork -p 8000:8000 --name dynamo_database cnadiminti/dynamodb-local:latest`
 

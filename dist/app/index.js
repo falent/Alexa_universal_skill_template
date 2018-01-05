@@ -4,9 +4,6 @@ const alexa_adapter = require("./src/index");
 const bodyParser = require("body-parser");
 const verifier = require('alexa-verifier');
 const app = express();
-var ip = require('ip');
-console.log("Your IP for ngrok is: ")
-console.log(ip.address())
 
 /**
  * start up our http server so we are ready for incoming requests.
