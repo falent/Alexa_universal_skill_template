@@ -2,5 +2,6 @@
 
 module.exports = {
     NONE: '',
-    TEMPLATE: '_TEMPLATE'
+    NAME: '_NAME',
+    RESERVE_ROOM: '_RESERVE_ROOM'
 };

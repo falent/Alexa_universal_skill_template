@@ -60,7 +60,7 @@ in my case it was:
 
 Please copy the https adresse in my case it was: 
 
-`$ https://b01408f.ngrok.io`
+`$ https://bb517728.ngrok.io/api/alexa`
 
 **Congratulations you can start testing your skill**
 

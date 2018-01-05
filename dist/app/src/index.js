@@ -1,17 +1,27 @@
 "use strict";
 
-const express = require("express");
+
 const Alexa = require("alexa-sdk");
-const context = require("aws-lambda-mock-context");
 
 const SpeechOutput = require('./alexa/resources/speech-output');
 const newSessionHandlers = require('./alexa/handlers/newSession.handlers');
-const templateHandlers = require('./alexa/handlers/template.handlers');
+const nameHandlers = require('./alexa/handlers/name.handlers');
+const reserveRoomHandlers = require('./alexa/handlers/reserveRoom.handlers');
+
+var allHandlers = [
+	newSessionHandlers,
+	nameHandlers,
+	reserveRoomHandlers
+];
+
 
 const config = require("./alexa/config/settings");
 
 //-------- ONLY IF YOU USE HTTPS SERVER --------  
-if (config.server=="http"){
+if (config.server=="https"){
+	
+	const express = require("express");
+	const context = require("aws-lambda-mock-context");
 	
 	const alexaRouter = express.Router();
 
@@ -42,10 +52,7 @@ if (config.server=="http"){
 	const alexaHandler = function (event, context, callback) {
 	    const alexa = Alexa.handler(event, context, callback); 
 	    alexa.resources = SpeechOutput;
-	    alexa.registerHandlers(
-	      newSessionHandlers,
-	      templateHandlers
-	    );
+	    alexa.registerHandlers.apply(null, allHandlers);
 	    alexa.execute();
 	};
 
@@ -56,15 +63,13 @@ if (config.server=="http"){
 
 		
 } 
-//-------- ONLY IF YOU USE AWS SERVER --------  
+//-------- ONLY IF YOU USE AWS SERVER -------- 
+// if you use AWS remember that you copy node_modules to src directory! and you only zip files from src directory!!
 else {
 	exports.handler = function(event, context, callback) {
 	    const alexa = Alexa.handler(event, context, callback); 
 	    alexa.resources = SpeechOutput;
-	    alexa.registerHandlers(
-	      newSessionHandlers,
-	      templateHandlers
-	    );
+	    alexa.registerHandlers.apply(null, allHandlers);
 	    alexa.execute();
 	};
 	
