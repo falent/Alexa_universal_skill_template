@@ -3,7 +3,7 @@ module.exports = {
   "en-US": {
       translation: {
           WELCOME: [
-              "Hi, What is your name?", "Hello, introduce yourself please"
+              "Hi, What is your name ?", "Hello, introduce yourself please"
           ],
           REPEAT: [
               "Could you please repeat?"

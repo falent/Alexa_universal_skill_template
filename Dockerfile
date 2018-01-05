@@ -10,5 +10,6 @@ WORKDIR /skill/dist/app/
  
 EXPOSE 8000
 EXPOSE 27017
+EXPOSE 8001
  
 ENTRYPOINT ["nodemon", "index.js"]

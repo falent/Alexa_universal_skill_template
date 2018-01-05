@@ -3,6 +3,8 @@
 const States = require('./states.const');
 const SpeechOutputUtils = require('../utils/speech-output.utils');
 
+//const User = require('../models/user');
+
 
 const inNewSessionStartableIntents = [
     'SharePriceIntent'
@@ -24,7 +26,8 @@ module.exports = {
 
     'LaunchIntent': function() {
     	
-        this.response.speak(SpeechOutputUtils.pickRandom(this.t('WELCOME')))
+
+        this.response.speak(SpeechOutputUtils.pickRandom(this.t('WELCOME'))+"dupa!")
             .listen(SpeechOutputUtils.pickRandom(this.t('REPEAT')));
         this.emit(':responseReady');
 

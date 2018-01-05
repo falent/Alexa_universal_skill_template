@@ -10,13 +10,28 @@ It is free of charge. (if you are already registered amazon user you can use you
 [Please be sure you installed docker on your linux ](https://docs.docker.com/engine/installation/#cloud)
 
 # 2.2.1 
-Firstly open terminal tab and pull mongoDb image
+Firstly open terminal and create docker network
+
+
+
+`$ sudo docker network create myNetwork`
+
+open terminal tab and pull mongoDb image
 
 `$ sudo docker pull mongo`
 
 Run docker mongodb container:
 
-`$ sudo docker run --name database -d -p 27017:27017 mongo --noauth --bind_ip=0.0.0.0`
+`$ sudo docker run --name mongo_database -d -p 27017:27017 mongo --noauth --network myNetwork`
+
+open a next terminal tab and pull dynamoDB image
+
+`$ docker pull dwmkerr/dynamodb`
+
+Run docker dynamoDB container:
+
+
+`$ sudo docker run -v "$PWD":/dynamodb_local_db --network myNetwork -p 8000:8000 --name dynamo_database cnadiminti/dynamodb-local:latest`
 
 Open a next terminal tab and create a directory, for next steps best would be:
 
@@ -36,33 +51,21 @@ Install npm modules
 
 `$ sudo npm install  `
 	
-build alexa image
-
-`$ sudo docker build -t alexa .`
-
 create alexa container
 
-`$ sudo docker run -v ~/Desktop/Template/Alexa_universal_skill_template:/skill -it --link database:database --name alexa alexa`
-
-copy your container ip address:
-
-In my case 
-
-`$ 172.17.0.3`
+`$ sudo docker run -v ~/Desktop/Template/Alexa_universal_skill_template:/skill -it --network myNetwork --name alexa philenius/alexa_http_server`
 
 open a new terminal tab and run the ngrok container:
 
-`$ sudo docker run --rm -it wernight/ngrok ngrok http [your alexa container ip]:8000 `
+`$ sudo docker run --rm --network myNetwork -it wernight/ngrok ngrok http alexa:8000 `
 
-in my case it was:
+Please copy the https address from ngrok in my case it was: 
 
-`$ sudo docker run --rm -it wernight/ngrok ngrok http **172.17.0.3:8000**`
+`$ https://bb517728.ngrok.io`
 
-Please copy the https address in my case it was: 
+`$ https://bb517728.ngrok.io/`
 
-`$ https://bb517728.ngrok.io/api/alexa`
-
-**Congratulations you can start testing your skill**
+**Congratulations you can start testing your skill using your personal address which should be similar to https://bb517728.ngrok.io/api/alexa**
 
 Please keep in mind all 3 terminal's tabs need to be opened all the time!
 

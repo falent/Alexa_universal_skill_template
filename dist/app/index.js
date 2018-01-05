@@ -65,8 +65,8 @@ console.log(ip.address())
  });
 
     app.use(bodyParser.json({ type: "application/json" }));
-    app.use("/api/alexa", alexa_adapter.default);
- 	var port = process.env.PORT || 8000;
+    app.use("/", alexa_adapter.default);
+ 	var port = process.env.PORT || 8001;
  	app.listen(port, function() {
     console.log("Hey super It looks really good. Well done. Your skill is ready! Port " + port);
  });
