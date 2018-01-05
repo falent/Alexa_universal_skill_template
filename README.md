@@ -64,7 +64,7 @@ Please copy the https address from ngrok in my case it was:
 `$ https://bb517728.ngrok.io`
 
 
-**Congratulations you can start testing your skill using your personal address which should be similar to https://bb517728.ngrok.io/api/alexa**
+**Congratulations you can start testing your skill using your personal address which should be similar to https://bb517728.ngrok.io**
 
 Please keep in mind all 3 terminal's tabs need to be opened all the time!
 
