@@ -22,11 +22,11 @@ Open a next terminal tab and create a directory, for next steps best would be:
 
 `$ cd`
 
-`$ mkdir ~/Desktop/Template/universal_skill`
+`$ mkdir ~/Desktop/Template/Alexa_universal_skill_template`
 
 Go to the directory
 
-`$ cd ~/Desktop/Template/universal_skill`
+`$ cd ~/Desktop/Template/Alexa_universal_skill_template`
 
 Clone my template from my github
 
@@ -42,7 +42,7 @@ build alexa image
 
 create alexa container
 
-`$ sudo docker run -v ~/Desktop/Template/universal_skill:/skill -it --link database:database --name alexa alexa`
+`$ sudo docker run -v ~/Desktop/Template/Alexa_universal_skill_template:/skill -it --link database:database --name alexa alexa`
 
 copy your container ip address:
 
@@ -56,9 +56,9 @@ open a new terminal tab and run the ngrok container:
 
 in my case it was:
 
-`$ sudo docker run --rm -it wernight/ngrok ngrok http 172.17.0.3:8000`
+`$ sudo docker run --rm -it wernight/ngrok ngrok http **172.17.0.3:8000**`
 
-Please copy the https adresse in my case it was: 
+Please copy the https address in my case it was: 
 
 `$ https://bb517728.ngrok.io/api/alexa`
 
