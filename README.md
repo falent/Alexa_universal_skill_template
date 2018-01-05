@@ -22,7 +22,7 @@ open terminal tab and pull mongoDb image
 
 Run docker mongodb container:
 
-`$ sudo docker run --name mongo_database -d -p 27017:27017 mongo --noauth --network myNetwork`
+`$ sudo docker run --name mongo_database -d -p 27018:27018 mongo --noauth --network myNetwork`
 
 open a next terminal tab and pull dynamoDB image
 
@@ -53,7 +53,7 @@ Install npm modules
 	
 create alexa container
 
-`$ sudo docker run -v ~/Desktop/Template/Alexa_universal_skill_template:/skill -it --network myNetwork --name alexa philenius/alexa_http_server`
+`$ sudo docker run -v ~/Desktop/Template/Alexa_universal_skill_template:/skill -it --network myNetwork --name alexa falent/alexa_http_server`
 
 open a new terminal tab and run the ngrok container:
 

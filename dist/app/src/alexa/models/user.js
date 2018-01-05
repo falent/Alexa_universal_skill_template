@@ -9,7 +9,7 @@ console.log(config)
 
 	}
 	if (config.enviroment=="docker"){
-		mongoose.connect('mongodb://mongo_database:27017');
+		mongoose.connect('mongodb://mongo_database:27018');
 	
 	
 	}
