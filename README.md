@@ -9,7 +9,7 @@ This README describes the local installation of Docker (**1**). If you don't wan
 # 1 Amazon Developer Account
 
 [Please register at the Amazon Developer Portal ](http://developer.amazon.com/)
-It's free of charge (if you have an Amazon account, you can don't have to register and you can use your credentials here). Without the _Amazon Developer Console_ you won't be able to write an Alexa skill.
+It's free of charge. If you already have an Amazon account, then you don't have to register. You can use the credentials of your existing account. Without the Amazon Developer Console you won't be able to write an Alexa skill.
 
 
 
