@@ -1,4 +1,4 @@
-**There are two ways to set-up your environment for developing Alexa skills during our MeetUp on January 9, 2018.*:
+**There are two ways to set-up your environment for developing Alexa skills during our Meetup on January 9, 2018**:
 
 ![Local Docker installation or virtual box](buttons.png)
 
