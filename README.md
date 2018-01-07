@@ -1,83 +1,85 @@
-It is a second way to set up enviroment to program Alexa skills locally during MeetUp 09.01.2018. If you dont like it [you can always use the first solution ](https://github.com/falent/Alexa_universal_skill_template_VM)               
+This README describes an alternative way to set up your environment for developing Alexa skills during the MeetUp on January 9, 2018. If you don't want to install Docker yourself, then skip this tutorial and follow [those instructions using my prepared VM](https://github.com/falent/Alexa_universal_skill_template_VM).
 
-# 1.
+# 1 Amazon Developer Account
 
-[Please register at amazon developer portal ](http://developer.amazon.com/)
-It is free of charge. (if you are already registered amazon user you can use your credentials here). Without developer console you won't be able to write your skill 
+[Please register at the Amazon Developer Portal ](http://developer.amazon.com/)
+It's free of charge (if you have an Amazon account, you can don't have to register and you can use your credentials here). Without the _Amazon Developer Console_ you won't be able to write an Alexa skill.
 
-# 2 Docker
 
-[Please be sure you installed docker on your linux ](https://docs.docker.com/engine/installation/#cloud)
 
-# 2.2.1 
-Firstly open terminal and create docker network
+# 2 Docker Installation
+
+Install [Docker CE (Community Edition)](https://docs.docker.com/engine/installation/#desktop) on your machine. To test your Docker installation execute the following command:
+
+`$ sudo docker run hello-world`
+
+
+
+# 3 Docker Containers 
+Firstly, open a terminal and create a new Docker network:
 
 `$ sudo docker network create myNetwork`
 
-Run docker mongodb container:
+Run a _MongoDB_ Docker container:
 
 `$ sudo docker run --name mongo_database -d --network myNetwork -p 27017:27017 mongo --noauth `
 
-Run docker dynamoDB container:
+Run a _DynamoDB_ Docker container:
 
-`$ sudo docker run -v "$PWD":/dynamodb_local_db --network myNetwork -p 8000:8000 --name dynamo_database cnadiminti/dynamodb-local:latest`
+* On Linux:
+  `$ sudo docker run -v "$PWD":/dynamodb_local_db --network myNetwork -p 8000:8000 --name dynamo_database cnadiminti/dynamodb-local:latest`
 
-Open a next terminal tab and create a directory, for next steps best would be:
+* On Windows:
 
-`$ cd`
+  `$ docker run -v //c/temp:/dynamodb_local_db --network myNetwork -p 8000:8000 --name dynamo_database cnadiminti/dynamodb-local:latest`
 
-`$ mkdir ~/Desktop/Template/Alexa_universal_skill_template`
+Open a second terminal tab and clone my git repository from Github:
 
-Go to the directory
+`$ git clone https://github.com/falent/Alexa_universal_skill_template.git  ~/Desktop/Alexa_universal_skill_template `
 
-`$ cd ~/Desktop/Template/Alexa_universal_skill_template`
+Go to the cloned git repository:
 
-Clone my template from my github
+`$ cd ~/Desktop/Alexa_universal_skill_template`
 
-`$ git clone https://github.com/falent/Alexa_universal_skill_template.git `
+Install all npm modules:
 
-Install npm modules
+`$ sudo npm install`
 
-`$ sudo npm install  `
-	
-create alexa container
+Run an _Alexa_ Docker container:
 
-`$ sudo docker run -v ~/Desktop/Template/Alexa_universal_skill_template:/skill -it --network myNetwork --name alexa falent/alexa_http_server`
+* On Linux:
+  `$ sudo docker run -v ~/Desktop/Alexa_universal_skill_template:/skill -it --network myNetwork --name alexa falent/alexa_http_server`
+* On Windows:
+  Replace the path with the absolute path to your cloned git repository, e.g. _//c/Users/john/Desktop/Alexa_universal_skill_template_ (:warning: Leading double slashes!!!).
+  `$ docker run -v <ABSOLUTE_PATH_TO_CLONED_GIT_REPO>:/skill -it --network myNetwork --name alexa falent/alexa_http_server`
 
-open a new terminal tab and run the ngrok container:
+Open a third terminal tab and run the _ngrok_ Docker container:
 
 `$ sudo docker run --rm --network myNetwork -it wernight/ngrok ngrok http alexa:8001 `
 
-Please copy the https address from ngrok in my case it was: 
-
-`$ https://bb517728.ngrok.io`
+Read through the console output of the ngrok Docker container and copy the *https address*. In my case it was `https://bb517728.ngrok.io`.
 
 
-**Congratulations you can start testing your skill using your personal address which should be similar to https://bb517728.ngrok.io**
+**Congratulations, you're now ready to test your skill using your personal address which should be similar to https://bb517728.ngrok.io**.
 
-Please keep in mind all 3 terminal's tabs need to be opened all the time!
+:warning: Please keep in mind that all 3 terminal tabs need to stay open all the time!
 
 
 
-# quickly deploy to heroku
 
-https://signup.heroku.com/dc
+# Instructions for a quick deployment to Heroku
 
-(wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh)
-
-heroku login
-
-heroku apps:create --region eu
-
-heroku config:set NPM_CONFIG_PRODUCTION=false
-
-git add .
-
-git commit -m "my first commit"
-
-git push heroku master
-
-heroku ps:scale web=1
-
-heroku logs --tail
+* Sign up for [Heroku](https://signup.heroku.com/dc) (it's for free).
+* Execute the following shell commands:
+  ```bash
+  $ (wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh)
+  heroku login
+  heroku apps:create --region eu
+  heroku config:set NPM_CONFIG_PRODUCTION=false
+  git add .
+  git commit -m "my first commit"
+  git push heroku master
+  heroku ps:scale web=1
+  heroku logs --tail
+  ```
 
