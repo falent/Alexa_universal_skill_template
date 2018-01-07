@@ -1,4 +1,10 @@
-This README describes an alternative way to set up your environment for developing Alexa skills during the MeetUp on January 9, 2018. If you don't want to install Docker yourself, then skip this tutorial and follow [those instructions using my prepared VM](https://github.com/falent/Alexa_universal_skill_template_VM).
+**There are two ways to set-up your environment for developing Alexa skills during our MeetUp on January 9, 2018.*:
+
+![Local Docker installation or virtual box](buttons.png)
+
+This README describes the local installation of Docker (**1**). If you don't want to install Docker yourself, then skip this tutorial and [follow the instructions of the second tutorial and use the existing VM](https://github.com/falent/Alexa_universal_skill_template_VM).
+
+
 
 # 1 Amazon Developer Account
 
