@@ -27,6 +27,7 @@ Run a _MongoDB_ Docker container:
 Run a _DynamoDB_ Docker container:
 
 * On Linux:
+
   `$ sudo docker run -v "$PWD":/dynamodb_local_db --network myNetwork -p 8000:8000 --name dynamo_database cnadiminti/dynamodb-local:latest`
 
 * On Windows:
@@ -48,9 +49,11 @@ Install all npm modules:
 Run an _Alexa_ Docker container:
 
 * On Linux:
+
   `$ sudo docker run -v ~/Desktop/Alexa_universal_skill_template:/skill -it --network myNetwork --name alexa falent/alexa_http_server`
 * On Windows:
   Replace the path with the absolute path to your cloned git repository, e.g. _//c/Users/john/Desktop/Alexa_universal_skill_template_ (:warning: Leading double slashes!!!).
+
   `$ docker run -v <ABSOLUTE_PATH_TO_CLONED_GIT_REPO>:/skill -it --network myNetwork --name alexa falent/alexa_http_server`
 
 Open a third terminal tab and run the _ngrok_ Docker container:
