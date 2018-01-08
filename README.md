@@ -52,11 +52,11 @@ Run a _DynamoDB_ Docker container:
 
 Open a second terminal tab and clone my git repository from Github:
 
-`$ git clone https://github.com/falent/Alexa_universal_skill_template.git  ~/Desktop/Alexa_universal_skill_template `
+`$ git clone https://github.com/falent/Alexa_universal_skill_template.git  ~/Desktop/Template/Alexa_universal_skill_template `
 
 Go to the cloned git repository:
 
-`$ cd ~/Desktop/Alexa_universal_skill_template`
+`$ cd ~/Desktop/Template/Alexa_universal_skill_template`
 
 Install all npm modules:
 
@@ -66,7 +66,7 @@ Run an _Alexa_ Docker container:
 
 * On Linux:
 
-  `$ sudo docker run -v ~/Desktop/Alexa_universal_skill_template:/skill -it --network myNetwork --name alexa falent/alexa_http_server`
+  `$ sudo docker run -v ~/Desktop/Template/Alexa_universal_skill_template:/skill -it --network myNetwork --name alexa falent/alexa_http_server`
 * On Windows:
   Replace the path with the absolute path to your cloned git repository, e.g. _//c/Users/john/Desktop/Alexa_universal_skill_template_ (:warning: Leading double slashes!!!).
 
