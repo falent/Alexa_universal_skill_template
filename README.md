@@ -2,7 +2,9 @@
 
 ![Local Docker installation or virtual box](buttons.png)
 
-This README describes the local installation of Docker (**1**). If you don't want to install Docker yourself, then skip this tutorial and [follow the instructions of the second tutorial and use the existing VM](https://github.com/falent/Alexa_universal_skill_template_VM).
+This README describes the local installation of Docker (**1**). With docker you'll need some extra time for setting up your environment (detailed tutorial).
+
+If you don't want to install Docker yourself, then skip this tutorial and [follow the instructions of the other tutorial and use the existing VM](https://github.com/falent/Alexa_universal_skill_template_VM). If you use my VM, everything will be preinstalled and you don't have to do any extra work. My VM contains bash scripts so that the Alexa skill template can be updated any time. Though, the download of the VM might take some time (4.5 GB).
 
 
 
@@ -38,7 +40,7 @@ Run a _DynamoDB_ Docker container:
 
 * On Windows:
 
-  `$ docker run -v //c/temp:/dynamodb_local_db --network myNetwork -p 8000:8000 --name dynamo_database cnadiminti/dynamodb-local:latest`
+  `$ docker run -v //c/temp:/dynamodb_local_db --network myNetwork -p 8000:8000 --name dynamo_database cnadiminti/dynamodb-local`
 
 Open a second terminal tab and clone my git repository from Github:
 
