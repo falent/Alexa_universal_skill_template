@@ -86,6 +86,72 @@ Read through the console output of the ngrok Docker container and copy the *http
 :warning: Please keep in mind that all 3 terminal tabs need to stay open all the time!
 
 
+##Test
+
+If you would like to test if your docker containers works fine
+please use any api client
+
+I will use a chrome extension postan
+https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
+
+1. open postamn chrome app 
+
+2. Near the top center of the screen is a box with the words "Enter request URL." Paste your ngrok address. In my case it was https://6b926c57.ngrok.io
+
+3. Change the GET dropdown to POST.
+
+4. Below the textbox, click the Headers tab. For the key, use "Content-Type", and for the value, use "application/json."
+
+5. On the Body tab, choose "raw" from the radio buttons, and paste the folowing request. After that click send. You will get a response in your alexa skill container and in postman!
+
+
+```javascript
+{
+  "session": {
+    "new": true,
+    "sessionId": "SessionId.c930f82d-19e2-41d8-b85e-19a82e3134f0",
+    "application": {
+      "applicationId": "amzn1.ask.skill.98529e64-b18d-4a1a-a1a5-5d0bfe27e861"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "amzn1.ask.account.AHMKV5TN7HSUMPZRYVRCDGDFGVL2EHX77BXHTHNPE3GX6YMHYTOG2MBU2AL5XRGNT5R2FU4Z7YTJQEJLER3UOZPZ3HLCGVNIAEUPYOLE5RO6MSDVSF2LKHDKKV36BSD4OJVIMELQ3VJH7MBFSPAK4KBSAFQUAHW2QT2HXABRRXXD7QQSQ24J4FCWOCBP2U5X5J6RNIRTFQA4BTQ"
+    }
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.f0523c07-6bd3-46a8-ac95-3dbd6d7aaff1",
+    "intent": {
+      "name": "NameIntent",
+      "slots": {
+        "first_name": {
+          "name": "first_name",
+          "value": "ssdf"
+        }
+      }
+    },
+    "locale": "en-US",
+    "timestamp": "2018-01-08T21:34:28Z"
+  },
+  "context": {
+    "AudioPlayer": {
+      "playerActivity": "IDLE"
+    },
+    "System": {
+      "application": {
+        "applicationId": "amzn1.ask.skill.98529e64-b18d-4a1a-a1a5-5d0bfe27e861"
+      },
+      "user": {
+        "userId": "amzn1.ask.account.AHMKV5TN7HSUMPZRYVRCDGDFGVL2EHX77BXHTHNPE3GX6YMHYTOG2MBU2AL5XRGNT5R2FU4Z7YTJQEJLER3UOZPZ3HLCGVNIAEUPYOLE5RO6MSDVSF2LKHDKKV36BSD4OJVIMELQ3VJH7MBFSPAK4KBSAFQUAHW2QT2HXABRRXXD7QQSQ24J4FCWOCBP2U5X5J6RNIRTFQA4BTQ"
+      },
+      "device": {
+        "supportedInterfaces": {}
+      }
+    }
+  },
+  "version": "1.0"
+}
+```
 
 
 # Instructions for a quick deployment to Heroku
