@@ -86,7 +86,7 @@ Read through the console output of the ngrok Docker container and copy the *http
 :warning: Please keep in mind that all 3 terminal tabs need to stay open all the time!
 
 
-##Test
+#Test your docker or VM environment
 
 If you would like to test if your docker containers works fine
 please use any api client
