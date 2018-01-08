@@ -21,9 +21,12 @@ Install [Docker CE (Community Edition)](https://docs.docker.com/engine/installat
 
 `$ sudo docker run hello-world`
 
+# 3 Node.js and NMP Installation
+
+Install [Node.JS](https://nodejs.org/en/download/) 
 
 
-# 3 Docker Containers 
+# 4 Docker Containers 
 Firstly, open a terminal and create a new Docker network:
 
 `$ sudo docker network create myNetwork`
@@ -31,6 +34,11 @@ Firstly, open a terminal and create a new Docker network:
 Run a _MongoDB_ Docker container:
 
 `$ sudo docker run --name mongo_database -d --network myNetwork -p 27017:27017 mongo --noauth `
+
+If you get an error because you have already installed MongoDB into your machine please keep in mind that docker MongoDb uses the same port. Please stop your mongoDb process to work with docker:
+
+`$ sudo service mongod stop`
+
 
 Run a _DynamoDB_ Docker container:
 
@@ -63,6 +71,8 @@ Run an _Alexa_ Docker container:
   Replace the path with the absolute path to your cloned git repository, e.g. _//c/Users/john/Desktop/Alexa_universal_skill_template_ (:warning: Leading double slashes!!!).
 
   `$ docker run -v <ABSOLUTE_PATH_TO_CLONED_GIT_REPO>:/skill -it --network myNetwork --name alexa falent/alexa_http_server`
+  
+(it can happens that you wish to add more modules to your skill. In that case you need to rebuild your docker image. The docker file is available in this directory. I will show you how to do that)
 
 Open a third terminal tab and run the _ngrok_ Docker container:
 
