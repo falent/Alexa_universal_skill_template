@@ -27,8 +27,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-	"alexa-verifier": "^0.3.6"
-
+    "alexa-verifier": "^0.3.6"
   },
   "dependencies": {
     "alexa-sdk": "^1.0.10",
@@ -41,6 +40,5 @@
     "mongodb": "^2.2.26",
     "ip": "1.1.5",
     "local-ipv4-address": "0.0.2"
-
   }
 }
