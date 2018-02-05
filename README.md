@@ -61,7 +61,7 @@ Run an _Alexa_ Docker container:
 
 * On Linux:
 
-  `$ sudo docker run -v ~/Desktop/Template/Alexa_universal_skill_template:/skill -it --network myNetwork --name alexa falent/alexa_http_server`
+  `$ sudo docker run -v /home/alexa/Desktop/Template/Alexa_universal_skill_template:/skill -it --network myNetwork --name alexa falent/alexa_http_server`
 * On Windows:
   Replace the path with the absolute path to your cloned git repository, e.g. _//c/Users/john/Desktop/Alexa_universal_skill_template_ (:warning: Leading double slashes!!!).
 
