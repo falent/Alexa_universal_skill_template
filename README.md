@@ -21,12 +21,7 @@ Install [Docker CE (Community Edition)](https://docs.docker.com/engine/installat
 
 `$ sudo docker run hello-world`
 
-# 3 Node.js and NMP Installation
-
-Install [Node.JS](https://nodejs.org/en/download/) 
-
-
-# 4 Docker Containers 
+# 3 Docker Containers 
 Firstly, open a terminal and create a new Docker network:
 
 `$ sudo docker network create myNetwork`
